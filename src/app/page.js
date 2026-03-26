@@ -33,7 +33,7 @@ export default function Home() {
 
           <div className="mt-6 mb-6 sm:mb-8 flex flex-wrap items-center gap-2">
             <a
-              href="https://github.com/"
+              href="https://github.com/yahya3867/simplevla"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-2 py-1 rounded md:rounded-md text-xs font-medium bg-neutral-200 border border-neutral-400 text-neutral-900 shadow-[inset_0_1px_0_rgba(255,255,255,0.85),0_1px_0_rgba(0,0,0,0.25)] hover:bg-neutral-300"

@@ -9,7 +9,7 @@ const lora = Lora({
 });
 
 export const metadata = {
-  title: "VLA Forge",
+  title: "SimpleVLA",
   description: "Road to VLA by Yahya Masri.",
 };
 
@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${lora.variable} antialiased`}>
         <div className="fixed top-4 left-4 text-sm tracking-wide hidden md:block">
-          vlaforge.com
+          simplevla.com
         </div>
         {children}
         <Analytics />
