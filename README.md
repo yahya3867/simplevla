@@ -1,40 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# VLA Forge
 
-## Getting Started
+A personal build log by Yahya Masri.
 
-First, run the development server:
+VLA Forge is a long-form, single-page site documenting the journey to
+understand and build Vision-Language-Action (VLA) systems from first
+principles. The visual writing style is intentionally inspired by
+[tinytpu.com](https://tinytpu.com/), adapted for this project.
+
+## Style and structure
+
+- Serif-first, article-like layout
+- Soft paper-toned background
+- Figure + caption rhythm for technical sections
+- Footnotes, references, and important resources at the end
+
+## Tech stack
+
+- Next.js 15 (App Router)
+- React 19
+- Tailwind CSS 4
+- KaTeX (`react-katex`) for math rendering
+- Vercel Analytics
+
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Optional Turbopack mode:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev:turbo
+```
 
-## Learn More
+## Edit guide
 
-To learn more about Next.js, take a look at the following resources:
+- Main page content: `src/app/page.js`
+- Top-left label + metadata: `src/app/layout.js`
+- Global colors/type/zoom: `src/app/globals.css`
+- Main visual asset: `public/vla.svg`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Footnotes pattern (for future writing)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Use a marker in the text:
 
-## Deploy on Vercel
+```jsx
+...from first principles.<sup id="fn1-ref"><a href="#fn1">[1]</a></sup>
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Define the note in the Footnotes section:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```jsx
+<p id="fn1">
+  [1] Your footnote text.
+  <a href="#fn1-ref">↩ back</a>
+</p>
+```
+
+## Build and verify
+
+```bash
+npm run lint
+npm run build
+npm run start
+```
 
 ## Credits
 
-Special thanks to Harrison Kessel for helping with website optimization and small bug fixes within this article.
+- Design direction inspired by [tinytpu.com](https://tinytpu.com/)
+- Content and implementation by Yahya Masri
