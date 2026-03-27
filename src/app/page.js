@@ -241,7 +241,7 @@ export default function Home() {
         </h2>
         <br />
         <p>
-          A Neural Netowkr (NN) is a computational system similiar to how the human brain processes
+          A Neural Network (NN) is a computational system similiar to how the human brain processes
           information. A neural network composes of neurons which are connected to each other, which
           allows them to learn to recognize hidden patterns in data, and even, make decisions.
           At its most vanilla form, a NN is also known as a multilayer perceptron. 
