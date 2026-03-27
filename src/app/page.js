@@ -47,8 +47,8 @@ export default function Home() {
         <p>
           I have spent years building with language models, but I kept feeling
           a gap between using these systems and truly understanding them. This
-          project is my attempt to close that gap by learning how a VLA model
-          works from first principles.
+          project is my attempt to close that gap by learning how a VLA works
+          from first principles.
         </p>
 
         <div className="mt-[30px] mb-[30px]">
@@ -64,7 +64,7 @@ export default function Home() {
             </div>
           </div>
           <p className="mt-2 text-sm text-gray-600 text-center">
-            How a VLA model works
+            How a VLA works
           </p>
         </div>
 
@@ -76,9 +76,9 @@ export default function Home() {
         <p>
           I wanted to do something genuinely difficult to prove to myself that I
           can go beyond using AI systems and actually understand how they work
-          under the hood. Building toward a VLA model felt like the right
-          challenge because it combines perception, language reasoning, and
-          action in one stack.
+          under the hood. Building toward a VLA felt like the right challenge
+          because it combines perception, language reasoning, and action in one
+          stack.
         </p>
 
         <ul className="list-disc list-inside text-left mt-4 break-words">
@@ -119,21 +119,20 @@ export default function Home() {
           <br />
           <p>
             Before moving forward, one clarification: this is not trying to be a
-            perfect reproduction of any production VLA system. It is my
-            first-principles attempt to understand and build the core ideas end
-            to end.
+            perfect reproduction of any production VLA. It is my first-principles
+            attempt to understand and build the core ideas end to end.
           </p>
         </div>
 
         <br />
         <h2 className="text-xl md:text-2xl font-semibold text-neutral-800 mb-1">
-          What is a VLA model?
+          What is a VLA?
         </h2>
 
         <div className="space-y-4 md:space-y-6">
           <br />
           <p>
-            
+            A VLA 
           </p>
 
           <div className="pl-4 ml-4 border-l-4 border-neutral-300">
@@ -260,7 +259,7 @@ export default function Home() {
                 Physical Intelligence (π)
               </a>
               {" "}
-              — physical intelligence homepage (VLA systems research lab).
+              — physical intelligence homepage (VLA research lab).
             </li>
             <li>
               <a
