@@ -133,26 +133,44 @@ export default function Home() {
         <div className="space-y-4 md:space-y-6">
           <br />
           <p>
-            A VLA model
+            A VLA model is a type of a foundation model which integrates NLU (natural language understanding),
+            perception (vision), and actions within one unified framework. By processing these three inputs
+            at the same time, VLA models allow robots to perform real-time tasks, such as manipulating objects,
+            navigating, and even generalizing to new scenarios without the need to be retrained.
           </p>
 
           <div className="pl-4 ml-4 border-l-4 border-neutral-300">
             <p>
-              <i>Quick primer:</i>
+              <i>Brief timeline:</i>
               <br />
               <br />
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              at dui feugiat, iaculis turpis in, convallis sem. Vivamus non
-              posuere turpis, sed consectetur elit.
+              VLAs have evolved over the years, starting with foundation models followed by scaling/policy 
+              models, followed by specialization models, and finally, generalized models. 
+              The current state of VLAs (generalized) means that these systems are SAFETY-AWARE and most
+              importantly, REAL-WORLD deployment ready.
             </p>
 
             <figure className="my-6">
-              <Placeholder
-                label="Diagram placeholder (clock cycle / system chart)"
-                ratioClass="aspect-[679/269]"
-              />
+              <div className="w-full rounded-2xl overflow-hidden border border-neutral-300 bg-white">
+                <div className="relative w-full aspect-[1080/1154]">
+                  <Image
+                    src="/vla_evolutions.png"
+                    alt="Evolution timeline of VLA models"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              </div>
               <figcaption className="text-sm text-center text-gray-600 mt-2">
-                Lorem ipsum placeholder caption for architecture diagram
+                Evolution timeline of VLA models, adapted from{" "}
+                <a
+                  href="#ref-vla-evolutions"
+                  className="no-underline text-purple-700 hover:text-purple-900"
+                >
+                  Vision-Language-Action (VLA) Models: Concepts, Progress,
+                  Applications and Challenges
+                </a>
+                .
               </figcaption>
             </figure>
           </div>
@@ -218,6 +236,19 @@ export default function Home() {
             References
           </h2>
           <ul className="list-disc pl-5 text-xs md:text-sm text-neutral-700 mt-2 space-y-1">
+            <li id="ref-vla-evolutions">
+              <a
+                href="https://arxiv.org/abs/2505.04769"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="no-underline text-purple-700 hover:text-purple-900"
+              >
+                Vision-Language-Action (VLA) Models: Concepts, Progress,
+                Applications and Challenges
+              </a>
+              {" "}
+              — Sapkota et al., 2025 (arXiv:2505.04769).
+            </li>
             <li>
               <a
                 href="https://example.com/reference-1"
