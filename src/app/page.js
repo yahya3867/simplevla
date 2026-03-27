@@ -190,9 +190,9 @@ export default function Home() {
         <br />
 
         <p>
-          Before diving deeper into the intricate individual parts that make up a VLA, we think it's best to
+          Before diving deeper into the intricate individual parts that make up a VLA, we think it&apos;s best to
           understand how a VLA model is trained. What does training data look like for a VLA system such as
-          robots that follow human instruction (Google's RT-2 and Amazon's Astro)?
+          robots that follow human instruction (Google&apos;s RT-2 and Amazon&apos;s Astro)?
         
         </p>
           
