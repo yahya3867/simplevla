@@ -30,6 +30,9 @@ export default function Home() {
               Yahya Masri
             </a>
           </p>
+          <p className="text-xs sm:text-sm text-neutral-600 mb-2 sm:mb-3 whitespace-normal break-words">
+            Contributors: Akshith Ambekar · Abhi Maddi
+          </p>
 
           <div className="mt-6 mb-6 sm:mb-8 flex flex-wrap items-center gap-2">
             <a
