@@ -27,11 +27,10 @@ export default function Home() {
               rel="noopener noreferrer"
               className="no-underline hover:text-neutral-800 mr-1 ml-1"
             >
-              Yahya Masri
+              Yahya Masri, Akshith Ambekar, Abhi Maddi
             </a>
           </p>
           <p className="text-xs sm:text-sm text-neutral-600 mb-2 sm:mb-3 whitespace-normal break-words">
-            Contributors: Akshith Ambekar · Abhi Maddi
           </p>
 
           <div className="mt-6 mb-6 sm:mb-8 flex flex-wrap items-center gap-2">
@@ -178,9 +177,6 @@ export default function Home() {
               </figcaption>
             </figure>
           </div>
-          <p>
-            
-          </p>
         </div>
 
         <br />
@@ -190,48 +186,42 @@ export default function Home() {
         <br />
 
         <p>
-          Before diving deeper into the intricate individual parts that make up a VLA, we think it&apos;s best to
-          understand how a VLA model is trained. What does training data look like for a VLA system such as
-          robots that follow human instruction (Google&apos;s RT-2 and Amazon&apos;s Astro)?
-        
+          Before we dive deep into the model&apos;s complex components, we would like to delve into how these
+          VLA systems are trained. For instruction-following robots (Google&apos;s RT-2 and Amazon&apos;s 
+          Astro), VLA training combines semantic understanding with robotic datasets.
         </p>
-          
+
         <br />
-        
-        <p>
-          d
 
-        </p>
-          
+        <p>At a high level, the training data has two seperate parts:</p>
 
+        <ul className="list-disc list-inside text-left mt-4 break-words">
+          <li>
+            <b>Web-scale semantic data:</b> image-caption pairs, instruction-following, 
+            and visual question-answering corpora that teach language-grounded perception. 
+          </li>
+          <li>
+            <b>Robot interaction data:</b> demonstration datasets; real or simulated.
+          </li>
+        </ul>
 
-        <div className="mt-0">
+        <br />
+
+        <div className="mt-6">
           <Placeholder
-            label="Secondary visual placeholder (replace with figure sequence)"
+            label="Training pipeline placeholder (pretrain -> align -> fine-tune)"
             ratioClass="aspect-[1816/940]"
           />
           <p className="mt-2 text-sm text-gray-600 text-center">
-            Placeholder for gradient, training, or evaluation visualization.
+            High-level VLA training flow.
           </p>
         </div>
 
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor
-          hendrerit dui, ac volutpat erat volutpat et. Mauris blandit posuere
-          viverra. Sed malesuada feugiat sapien, quis suscipit nulla pretium id.
+
+        <p>While now may seem like the perfect transition to talk about a practical training pipeline, first
+          we will dig deeper into what everything up to this point ACTUALLY means...
         </p>
 
-        <div className="my-6">
-          <Placeholder
-            label="Social/embed placeholder"
-            ratioClass="aspect-[16/6]"
-          />
-        </div>
-
-        <p className="text-sm text-neutral-600 mt-10">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-          varius mi in augue sollicitudin, ac fermentum lorem consequat.
-        </p>
         <hr className="mt-10 md:mt-16 mb-4 border-neutral-200" />
         <h2 className="text-xs uppercase tracking-wide text-neutral-500">
           Footnotes
