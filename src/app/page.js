@@ -193,10 +193,17 @@ export default function Home() {
           Before diving deeper into the intricate individual parts that make up a VLA, we think it's best to
           understand how a VLA model is trained. What does training data look like for a VLA system such as
           robots that follow human instruction (Google's RT-2 and Amazon's Astro)?
-
+        
+        </p>
           
+        <br />
+        
+        <p>
+          d
 
         </p>
+          
+
 
         <div className="mt-0">
           <Placeholder
