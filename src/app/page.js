@@ -225,9 +225,8 @@ export default function Home() {
         </div>
 
         <p className="mt-10">
-          While this feels like a natural transition to a full pipeline deep
-          dive, we first want to unpack what each dataset type contributes and
-          where failure modes usually begin.
+          While right here feels like the perfect spot to talk about practial training pipelines,
+          we think it is best to delve deeper into the multiple components that can make up a VLA model.
         </p>
 
         <br />
