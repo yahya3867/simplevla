@@ -3,7 +3,7 @@
 A personal build log by Yahya Masri.
 
 SimpleVLA is a long-form, single-page site documenting the journey to
-understand and build Vision-Language-Action (VLA) systems from first
+understand and build Vision-Language-Action (VLA) models from first
 principles. The visual writing style is intentionally inspired by
 [tinytpu.com](https://tinytpu.com/), adapted for this project.
 

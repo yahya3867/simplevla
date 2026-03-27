@@ -10,7 +10,7 @@ const lora = Lora({
 
 export const metadata = {
   title: "SimpleVLA",
-  description: "Road to VLA by Yahya Masri.",
+  description: "Road to building VLA models by Yahya Masri.",
 };
 
 export default function RootLayout({ children }) {
