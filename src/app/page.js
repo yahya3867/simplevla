@@ -136,19 +136,25 @@ export default function Home() {
         <div className="space-y-4 md:space-y-6">
           <br />
           <p>
-            A VLA model is a type of a foundation model which integrates NLU (natural language understanding),
-            perception (vision), and actions within one unified framework. By processing these three inputs
-            at the same time, VLA models allow robots/systems to perform real-time tasks, such as manipulating objects,
-            navigating, and even generalizing to new scenarios without the need to be retrained.
+            A VLA model is a type of foundation model that integrates NLU
+            (natural language understanding), perception (vision), and actions
+            in one unified framework.
+          </p>
+          <p>
+            By processing these three inputs together, VLA models allow
+            robots/systems to perform real-time tasks like manipulation,
+            navigation, and generalization to new scenarios without retraining.
           </p>
 
           <div className="pl-4 ml-4 border-l-4 border-neutral-300">
             <p>
               <i>Brief timeline:</i>
-              <br />
-              <br />
+            </p>
+            <p className="mt-4">
               VLAs have evolved over the years, starting with foundation models followed by scaling/policy 
               models, followed by specialization models, and finally, generalized models. 
+            </p>
+            <p className="mt-4">
               The current state of VLAs (generalized) means that these systems are SAFETY-AWARE and most
               importantly, REAL-WORLD deployment ready.
             </p>
@@ -231,15 +237,18 @@ export default function Home() {
 
         <br />
         <h2 className="text-xl md:text-2xl font-semibold text-neutral-800 mb-1">
-          New section 1
+          What is a Neural Network?
         </h2>
         <br />
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-          cursus, justo at porta elementum, lacus velit porttitor mauris, sed
-          vulputate neque sem at justo. Integer ultrices, nisl a laoreet
-          efficitur, sem purus convallis felis, non faucibus lacus lectus quis
-          velit.
+          A Neural Netowkr (NN) is a computational system similiar to how the human brain processes
+          information. A neural network composes of neurons which are connected to each other, which
+          allows them to learn to recognize hidden patterns in data, and even, make decisions.
+          At its most vanilla form, a NN is also known as a multilayer perceptron. 
+        </p>
+        <p className="mt-4">
+          But first, what does the word neuron really mean...?  In the context of a NN, we can think of a
+          neuron as a thing that holds a number, between 0 and 1.
         </p>
 
         <br />
