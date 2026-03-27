@@ -208,18 +208,63 @@ export default function Home() {
         <br />
 
         <div className="mt-6">
-          <Placeholder
-            label="Training pipeline placeholder (pretrain -> align -> fine-tune)"
-            ratioClass="aspect-[1816/940]"
-          />
+          <div className="w-full rounded-2xl overflow-hidden border border-neutral-300 bg-white">
+            <div className="relative w-full aspect-[678/431]">
+              <Image
+                src="/training_data.svg"
+                alt="Training data split for VLA models"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
           <p className="mt-2 text-sm text-gray-600 text-center">
-            High-level VLA training flow.
+            Training data composition for VLA models: web-scale semantic data
+            and robot interaction trajectories.
           </p>
         </div>
 
+        <p className="mt-10">
+          While this feels like a natural transition to a full pipeline deep
+          dive, we first want to unpack what each dataset type contributes and
+          where failure modes usually begin.
+        </p>
 
-        <p>While now may seem like the perfect transition to talk about a practical training pipeline, first
-          we will dig deeper into what everything up to this point ACTUALLY means...
+        <br />
+        <h2 className="text-xl md:text-2xl font-semibold text-neutral-800 mb-1">
+          New section 1
+        </h2>
+        <br />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+          cursus, justo at porta elementum, lacus velit porttitor mauris, sed
+          vulputate neque sem at justo. Integer ultrices, nisl a laoreet
+          efficitur, sem purus convallis felis, non faucibus lacus lectus quis
+          velit.
+        </p>
+
+        <br />
+        <h2 className="text-xl md:text-2xl font-semibold text-neutral-800 mb-1">
+          New section 2
+        </h2>
+        <br />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+          iaculis lorem sed sapien tristique, nec luctus lectus commodo. Etiam
+          non massa nec nisi dictum feugiat. Aliquam erat volutpat. Maecenas
+          tincidunt mi eget est faucibus, ut luctus lorem iaculis.
+        </p>
+
+        <br />
+        <h2 className="text-xl md:text-2xl font-semibold text-neutral-800 mb-1">
+          New section 3
+        </h2>
+        <br />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          potenti. Morbi vulputate justo non magna fringilla, eu posuere mauris
+          tincidunt. Sed in tempor eros, vitae bibendum nunc. Nunc aliquet
+          ullamcorper augue, sed pretium velit tristique a.
         </p>
 
         <hr className="mt-10 md:mt-16 mb-4 border-neutral-200" />
