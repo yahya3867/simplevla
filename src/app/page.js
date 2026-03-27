@@ -45,10 +45,10 @@ export default function Home() {
         </div>
 
         <p>
-          I have spent years building with language models, but I kept feeling
-          a gap between using these systems and truly understanding them. This
-          project is my attempt to close that gap by learning how a VLA model
-          works from first principles.
+          We have spent years building with language models, but we kept
+          feeling a gap between using these systems and truly understanding
+          them. This project is our attempt to close that gap by learning how a
+          VLA model works from first principles.
         </p>
 
         <div className="mt-[30px] mb-[30px]">
@@ -69,21 +69,22 @@ export default function Home() {
         </div>
 
         <h2 className="text-xl md:text-2xl font-semibold text-neutral-800 mb-1 mt-12">
-          Why did I start this project?
+          Why did we start this project?
         </h2>
         <br />
 
         <p>
-          I wanted to do something genuinely difficult to prove to myself that I
-          can go beyond using AI systems and actually understand how they work
-          under the hood. Building toward a VLA model felt like the right
+          We wanted to do something genuinely difficult to prove to ourselves
+          that we can go beyond using AI systems and actually understand how
+          they work under the hood. Building toward a VLA model felt like the
+          right
           challenge because it combines perception, language reasoning, and
           action in one stack.
         </p>
 
         <ul className="list-disc list-inside text-left mt-4 break-words">
           <li>
-            I have used LLM tooling in practice, but I want first-principles
+            We have used LLM tooling in practice, but we want first-principles
             understanding instead of surface-level familiarity.
           </li>
           <li>
@@ -95,23 +96,23 @@ export default function Home() {
         <br />
 
         <p>
-          My working philosophy for this project is: build before over-consuming
-          theory. I want to prototype, fail, and debug small components first,
-          then study papers with sharper questions. That way I am not just
-          repeating terminology, I am forming real intuition.
+          Our working philosophy for this project is: build before
+          over-consuming theory. We want to prototype, fail, and debug small
+          components first, then study papers with sharper questions. That way
+          we are not just repeating terminology, we are forming real intuition.
         </p>
         <br />
 
         <p>
-          I also want this to shape how I think: slower, more deliberate, and
+          We also want this to shape how we think: slower, more deliberate, and
           more grounded in fundamentals. Instead of treating advanced systems
-          like black boxes, I want to document each piece, explain it clearly,
-          and share progress publicly as I go.
+          like black boxes, we want to document each piece, explain it clearly,
+          and share progress publicly as we go.
         </p>
 
         <div className="mt-6 md:mt-8">
           <p>
-            Throughout this project, I am trying to learn by drawing system
+            Throughout this project, we are trying to learn by drawing system
             diagrams, writing down assumptions, and validating each step with
             implementation. The goal is to make the learning path inspectable
             and reproducible.
@@ -119,7 +120,7 @@ export default function Home() {
           <br />
           <p>
             Before moving forward, one clarification: this is not trying to be a
-            perfect reproduction of any production VLA system. It is my
+            perfect reproduction of any production VLA system. It is our
             first-principles attempt to understand and build the core ideas end
             to end.
           </p>
@@ -174,6 +175,9 @@ export default function Home() {
               </figcaption>
             </figure>
           </div>
+          <p>
+            
+          </p>
         </div>
 
         <br />
