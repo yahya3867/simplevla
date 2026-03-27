@@ -314,15 +314,15 @@ export default function Home() {
             </li>
             <li>
               <a
-                href="https://openai.com/index/parameter-golf/"
+                href="https://openvla.github.io"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="no-underline text-purple-700 hover:text-purple-900"
               >
-                OpenAI&apos;s Parameter Gulf
+                OpenVLA
               </a>
               {" "}
-              — research competition challenging participants to train the most efficient, high-performance language model possible under extreme constraints.
+              — official project page for the open-source Vision-Language-Action model.
             </li>
             <li>
               <a
