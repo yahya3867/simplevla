@@ -139,7 +139,7 @@ export default function Home() {
           <p>
             A VLA model is a type of a foundation model which integrates NLU (natural language understanding),
             perception (vision), and actions within one unified framework. By processing these three inputs
-            at the same time, VLA models allow robots to perform real-time tasks, such as manipulating objects,
+            at the same time, VLA models allow robots/systems to perform real-time tasks, such as manipulating objects,
             navigating, and even generalizing to new scenarios without the need to be retrained.
           </p>
 
@@ -185,14 +185,17 @@ export default function Home() {
 
         <br />
         <h2 className="text-xl md:text-2xl font-semibold text-neutral-800 mb-1">
-          Another section
+          How a VLA model is trained
         </h2>
         <br />
 
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis
-          tincidunt odio. Integer vel nisl sit amet lectus tristique viverra.
-          Suspendisse luctus gravida justo, sed suscipit urna porttitor in.
+          Before diving deeper into the intricate individual parts that make up a VLA, we think it's best to
+          understand how a VLA model is trained. What does training data look like for a VLA system such as
+          robots that follow human instruction (Google's RT-2 and Amazon's Astro)?
+
+          
+
         </p>
 
         <div className="mt-0">
@@ -314,15 +317,15 @@ export default function Home() {
             </li>
             <li>
               <a
-                href="https://openvla.github.io"
+                href="https://openai.com/index/parameter-golf/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="no-underline text-purple-700 hover:text-purple-900"
               >
-                OpenVLA
+                OpenAI&apos;s Parameter Gulf
               </a>
               {" "}
-              — official project page for the open-source Vision-Language-Action model.
+              — research competition challenging participants to train the most efficient, high-performance language model possible under extreme constraints.
             </li>
             <li>
               <a
