@@ -118,10 +118,9 @@ export default function Home() {
         </div>
 
         <p>
-          We have spent years building with language models, but we kept
-          feeling a gap between using these systems and truly understanding
-          them. This project is our attempt to close that gap by learning how a
-          VLA model works from first principles.
+          Nobody really understands VLAs end-to-end, and neither do we. We
+          started this project to learn by building each piece ourselves from
+          first principles.
         </p>
 
         <div className="mt-[30px] mb-[30px]">
@@ -147,55 +146,45 @@ export default function Home() {
         <br />
 
         <p>
-          We wanted to do something genuinely difficult to prove to ourselves
-          that we can go beyond using AI systems and actually understand how
-          they work under the hood. Building toward a VLA model felt like the
-          right
-          challenge because it combines perception, language reasoning, and
-          action in one stack.
+          We picked this because it is hard. We did not want to stay at the API
+          layer; we wanted to understand how perception, language, and action
+          connect.
         </p>
 
         <ul className="list-disc list-inside text-left mt-4 break-words">
           <li>
-            We have used LLM tooling in practice, but we want first-principles
-            understanding instead of surface-level familiarity.
+            We use LLM tools daily, but we want first-principles understanding.
           </li>
           <li>
-            There still is not a simple, practical, beginner-friendly path that
-            shows how to reason from model outputs all the way to physical
-            actions.
+            There is still no clear beginner path from model outputs to
+            real-world robot actions.
           </li>
         </ul>
         <br />
 
         <p>
-          Our working philosophy for this project is: build before
-          over-consuming theory. We want to prototype, fail, and debug small
-          components first, then study papers with sharper questions. That way
-          we are not just repeating terminology, we are forming real intuition.
+          Our design philosophy is simple: build first, read later. We
+          prototype, fail, debug, then return to papers with sharper questions.
         </p>
         <br />
 
         <p>
-          We also want this to shape how we think: slower, more deliberate, and
-          more grounded in fundamentals. Instead of treating advanced systems
-          like black boxes, we want to document each piece, explain it clearly,
-          and share progress publicly as we go.
+          We also want to train a style of thinking: patient, deliberate, and
+          grounded in fundamentals. Instead of treating VLAs like black boxes,
+          we document each assumption and share progress publicly as we go.
         </p>
 
         <div className="mt-6 md:mt-8">
           <p>
-            Throughout this project, we are trying to learn by drawing system
-            diagrams, writing down assumptions, and validating each step with
-            implementation. The goal is to make the learning path inspectable
-            and reproducible.
+            Throughout this project, we learn by drawing system diagrams,
+            writing assumptions down, and validating each step in code. The
+            goal is an inspectable, reproducible learning path.
           </p>
           <br />
           <p>
-            Before moving forward, one clarification: this is not trying to be a
-            perfect reproduction of any production VLA system. It is our
-            first-principles attempt to understand and build the core ideas end
-            to end.
+            Before we move forward, one clarification: this is not a production
+            VLA replica. It is our attempt to re-invent the core ideas
+            ourselves.
           </p>
         </div>
 
@@ -207,14 +196,13 @@ export default function Home() {
         <div className="space-y-4 md:space-y-6">
           <br />
           <p>
-            A VLA model is a type of foundation model that integrates NLU
-            (natural language understanding), perception (vision), and actions
-            in one unified framework.
+            A VLA model unifies vision, language, and action in one model.
+            Given images, text, and state, it predicts actions.
           </p>
           <p>
-            By processing these three inputs together, VLA models allow
-            robots/systems to perform real-time tasks like manipulation,
-            navigation, and generalization to new scenarios without retraining.
+            In practice, this lets robots follow instructions, manipulate
+            objects, and generalize to new scenes with less task-specific
+            retraining.
           </p>
 
           <div className="pl-4 ml-4 border-l-4 border-neutral-300">
@@ -222,12 +210,12 @@ export default function Home() {
               <i>Brief timeline:</i>
             </p>
             <p className="mt-4">
-              VLAs have evolved over the years, starting with foundation models followed by scaling/policy 
-              models, followed by specialization models, and finally, generalized models. 
+              VLAs have moved from pure vision-language pretraining to policy
+              fine-tuning and then to broader generalist systems.
             </p>
             <p className="mt-4">
-              The current state of VLAs (generalized) means that these systems are SAFETY-AWARE and most
-              importantly, REAL-WORLD deployment ready.
+              The current frontier focuses on reliability: safer behavior,
+              better grounding, and stronger real-world transfer.
             </p>
 
             <figure className="my-6">
@@ -263,14 +251,14 @@ export default function Home() {
         <br />
 
         <p>
-          Before we dive deep into the model&apos;s complex components, we would like to delve into how these
-          VLA systems are trained. For instruction-following robots (Google&apos;s RT-2 and Amazon&apos;s 
-          Astro), VLA training combines semantic understanding with robotic datasets.
+          Before we dive into architecture details, we should cover training.
+          Modern VLA pipelines combine web-scale semantic supervision with robot
+          interaction data.
         </p>
 
         <br />
 
-        <p>At a high level, the training data has two seperate parts:</p>
+        <p>At a high level, the training mix has two parts:</p>
 
         <ul className="list-disc list-inside text-left mt-4 break-words">
           <li>
@@ -302,8 +290,8 @@ export default function Home() {
         </div>
 
         <p className="mt-10">
-          While right here feels like the perfect spot to talk about practial training pipelines,
-          we think it is best to delve deeper into the multiple components that can make up a VLA model.
+          This is the right place to discuss full training pipelines, but first
+          we need the core building blocks that make a VLA possible.
         </p>
 
         <br />
@@ -312,10 +300,9 @@ export default function Home() {
         </h2>
         <br />
         <p>
-          A Neural Network (NN) is a computational system similiar to how the human brain processes
-          information. A neural network composes of neurons which are connected to each other, which
-          allows them to learn to recognize hidden patterns in data, and even, make decisions.
-          At its most vanilla form, a NN is also known as a Multilayer Perceptron (MLP). 
+          A neural network is a function approximator made of layers of neurons.
+          Each neuron combines inputs, applies weights, and outputs an
+          activation. The simplest version is a multilayer perceptron (MLP).
         </p>
         <figure className="my-6">
           <div className="w-full rounded-2xl overflow-hidden border border-neutral-300 bg-white">
@@ -333,15 +320,12 @@ export default function Home() {
           </figcaption>
         </figure>
         <p className="mt-4">
-          But first, what does the word neuron really mean...?  In the context of a NN, we can think of a
-          neuron as a thing that holds a number between 0 and 1. And that specific number,
-          whether 0.0, 1.0, or 0.58, is called its activation. Zooming out, a MLP for recognizing
-          digits based off a drawing or image has around 3-4 layers. Layer 1 is the input layer where
-          every individual pixel maps to a neural activation, which in this case represents the grayscale value
-          (1.0 if its white, 0.0 if its black). Layers 2 and 3 are the hidden layers where the output
-          activations from the previous layer determines the activations in the current layer. And finally, 
-          the output layer consists of only 10 neurons corresponding to the 10 digits. The neuron with the 
-          greatest activation value is the predicted digit based off the input drawing.
+          What is a neuron in this context? It is a single scalar value, usually
+          called an activation. For digit classification, an MLP might have 3-4
+          layers: an input layer, one or two hidden layers, and an output layer
+          of 10 neurons. In the input layer, each pixel maps to one activation
+          (black near 0, white near 1). The output neuron with the highest
+          activation is the predicted digit.
         </p>
         <figure className="my-6">
           <div className="w-full rounded-2xl overflow-hidden border border-neutral-300 bg-white">
@@ -360,12 +344,10 @@ export default function Home() {
         </figure>
         <FigureCarousel slides={mlpSlides} />
         <p className="mt-4">
-          Intuitively, the input layer (layer 1) and the output layer (layer 4) make sense, however, the hidden
-          layers (layers 2-3) are a bit confusing in terms of how they effect each other.
-          Specifically, how do the activations in one layer determine the activations in the next layer? This is where
-          weights come into play. Weights represent the strength and importance of connections between
-          neurons. They determine which pixel patterns the neuron should pay attention to by scaling the
-          input activations.
+          Input and output layers are intuitive, but hidden layers raise the key
+          question: how does one layer determine the next? Through weights. A
+          weight scales an incoming activation and controls how strongly one
+          neuron influences another.
         </p>
         <figure className="my-6">
           <div className="w-full rounded-2xl overflow-hidden border border-neutral-300 bg-white">
@@ -383,27 +365,20 @@ export default function Home() {
           </figcaption>
         </figure>
         <p className="mt-4">
-          Let us dig deeper into what this really means because even I am VERY confused. In a NN, a
-          neuron&apos;s activation is determined by taking the activations of all the neurons in the previous
-          layer by computing a weighted sum using all the weights associated with each connection.
-          Since each weight is a number that multiplies the activation from a preceding neutron, it acts 
-          as a dial that controls how much influence, or strength that connection has. So basically,
-          think about ONE singular neuron. Let&apos;s say this neuron has 8 edges connected to it (all from 
-          different neurons) from the previous layer. All these edges/connections have a specific value
-          called the weight. This weight is multiplied with the activation value of its starting point neuron
-          and then all these are summed up to create the weighted sum which becomes that ONE singular neuron&apos;s
-          activation.
-        </p>
-        <p className = "mt-4">
-          FIRST thing that came to mind was what determines the values of the weights. However, the answer
-          is pretty straightforward. A network starts with completely RANDOM weights, which naturally leads
-          to horrible performance. However, during training, the network becomes better using a function
-          that measures how wrong its answers are.
+          Take one neuron in a hidden layer with eight incoming connections.
+          Each incoming activation is multiplied by its corresponding weight, and
+          those products are summed. That weighted sum becomes the
+          neuron&apos;s pre-activation signal.
         </p>
         <p className="mt-4">
-          How does the activation stay between 0 and 1? This is thanks to the Sigmoid function, which makes
-          very negative inputs close to 0 and very positive inputs close to 1. 
-
+          So where do weights come from? We start with random values. At first
+          the network performs poorly, then training updates the weights to
+          reduce prediction error.
+        </p>
+        <p className="mt-4">
+          To keep activations bounded in this toy example, we use a sigmoid
+          function. Large negative inputs map near 0, and large positive inputs
+          map near 1.
         </p>
         <figure className="my-6">
           <div className="w-full rounded-2xl overflow-hidden border border-neutral-300 bg-white">
