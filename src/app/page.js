@@ -341,7 +341,7 @@ export default function Home() {
             </div>
           </div>
           <figcaption className="text-sm text-center text-gray-600 mt-2">
-            A single neuron combines multiple incoming signals.
+            One neuron (the circle) with an activation number inside (0.27).
           </figcaption>
         </figure>
         <p className="mt-4">
