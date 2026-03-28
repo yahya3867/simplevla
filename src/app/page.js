@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 
 function Placeholder({ label, ratioClass = "aspect-[16/9]" }) {
@@ -10,7 +13,77 @@ function Placeholder({ label, ratioClass = "aspect-[16/9]" }) {
   );
 }
 
+function FigureCarousel({ slides }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const currentSlide = slides[currentIndex];
+
+  const showPrevious = () => {
+    setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const showNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % slides.length);
+  };
+
+  return (
+    <figure className="my-6">
+      <div className="w-full rounded-2xl overflow-hidden border border-neutral-300 bg-white">
+        <div className={`relative w-full ${currentSlide.aspectClass || "aspect-[678/431]"}`}>
+          <Image
+            src={currentSlide.src}
+            alt={currentSlide.alt}
+            fill
+            className="object-contain"
+          />
+        </div>
+      </div>
+      <div className="mt-3 flex items-center justify-between gap-3">
+        <button
+          type="button"
+          onClick={showPrevious}
+          className="px-2 py-1 text-xs rounded border border-neutral-400 bg-neutral-200 hover:bg-neutral-300"
+          aria-label="Show previous figure"
+        >
+          {"<"}
+        </button>
+        <p className="text-xs text-neutral-600 text-center">
+          Figure {currentIndex + 1} of {slides.length}
+        </p>
+        <button
+          type="button"
+          onClick={showNext}
+          className="px-2 py-1 text-xs rounded border border-neutral-400 bg-neutral-200 hover:bg-neutral-300"
+          aria-label="Show next figure"
+        >
+          {">"}
+        </button>
+      </div>
+      <figcaption className="text-sm text-center text-gray-600 mt-2">
+        {currentSlide.caption}
+      </figcaption>
+    </figure>
+  );
+}
+
 export default function Home() {
+  const mlpSlides = [
+    {
+      src: "/nn-input-layer.svg",
+      alt: "Input layer only",
+      caption: "Input layer: raw values enter the network.",
+    },
+    {
+      src: "/nn-input-hidden-layers.svg",
+      alt: "Input and hidden layers",
+      caption: "Hidden layers transform input features into higher-level patterns.",
+    },
+    {
+      src: "/nn-full-network.svg",
+      alt: "Input, hidden, and output layers",
+      caption: "Full network view: input, hidden layers, and output prediction.",
+    },
+  ];
+
   return (
     <main className="min-h-screen w-full overflow-x-hidden flex justify-center items-start px-4 sm:px-6 lg:px-8 pt-10 md:pt-28 pb-10 ">
       <div className="w-full max-w-3xl text-base md:text-lg leading-7 md:leading-8 text-left break-words">
@@ -29,8 +102,6 @@ export default function Home() {
             >
               Yahya Masri, Akshith Ambekar, Abhi Maddi
             </a>
-          </p>
-          <p className="text-xs sm:text-sm text-neutral-600 mb-2 sm:mb-3 whitespace-normal break-words">
           </p>
 
           <div className="mt-6 mb-6 sm:mb-8 flex flex-wrap items-center gap-2">
@@ -244,13 +315,111 @@ export default function Home() {
           A Neural Network (NN) is a computational system similiar to how the human brain processes
           information. A neural network composes of neurons which are connected to each other, which
           allows them to learn to recognize hidden patterns in data, and even, make decisions.
-          At its most vanilla form, a NN is also known as a multilayer perceptron. 
+          At its most vanilla form, a NN is also known as a Multilayer Perceptron (MLP). 
         </p>
+        <figure className="my-6">
+          <div className="w-full rounded-2xl overflow-hidden border border-neutral-300 bg-white">
+            <div className="relative w-full aspect-[678/431]">
+              <Image
+                src="/nn-single-neuron.svg"
+                alt="A single neuron with incoming signals"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
+          <figcaption className="text-sm text-center text-gray-600 mt-2">
+            A single neuron combines multiple incoming signals.
+          </figcaption>
+        </figure>
         <p className="mt-4">
           But first, what does the word neuron really mean...?  In the context of a NN, we can think of a
-          neuron as a thing that holds a number, between 0 and 1.
+          neuron as a thing that holds a number between 0 and 1. And that specific number,
+          whether 0.0, 1.0, or 0.58, is called its activation. Zooming out, a MLP for recognizing
+          digits based off a drawing or image has around 3-4 layers. Layer 1 is the input layer where
+          every individual pixel maps to a neural activation, which in this case represents the grayscale value
+          (1.0 if its white, 0.0 if its black). Layers 2 and 3 are the hidden layers where the output
+          activations from the previous layer determines the activations in the current layer. And finally, 
+          the output layer consists of only 10 neurons corresponding to the 10 digits. The neuron with the 
+          greatest activation value is the predicted digit based off the input drawing.
         </p>
+        <figure className="my-6">
+          <div className="w-full rounded-2xl overflow-hidden border border-neutral-300 bg-white">
+            <div className="relative w-full aspect-[678/431]">
+              <Image
+                src="/nn-neuron-pixel.svg"
+                alt="Input neuron corresponding to a single pixel"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
+          <figcaption className="text-sm text-center text-gray-600 mt-2">
+            Input neurons can correspond directly to pixel-level signal values.
+          </figcaption>
+        </figure>
+        <FigureCarousel slides={mlpSlides} />
+        <p className="mt-4">
+          Intuitively, the input layer (layer 1) and the output layer (layer 4) make sense, however, the hidden
+          layers (layers 2-3) are a bit confusing in terms of how they effect each other.
+          Specifically, how do the activations in one layer determine the activations in the next layer? This is where
+          weights come into play. Weights represent the strength and importance of connections between
+          neurons. They determine which pixel patterns the neuron should pay attention to by scaling the
+          input activations.
+        </p>
+        <figure className="my-6">
+          <div className="w-full rounded-2xl overflow-hidden border border-neutral-300 bg-white">
+            <div className="relative w-full aspect-[678/431]">
+              <Image
+                src="/nn-weights.svg"
+                alt="Weighted connections between neurons"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
+          <figcaption className="text-sm text-center text-gray-600 mt-2">
+            Weights control how much each incoming activation influences the next neuron.
+          </figcaption>
+        </figure>
+        <p className="mt-4">
+          Let us dig deeper into what this really means because even I am VERY confused. In a NN, a
+          neuron&apos;s activation is determined by taking the activations of all the neurons in the previous
+          layer by computing a weighted sum using all the weights associated with each connection.
+          Since each weight is a number that multiplies the activation from a preceding neutron, it acts 
+          as a dial that controls how much influence, or strength that connection has. So basically,
+          think about ONE singular neuron. Let&apos;s say this neuron has 8 edges connected to it (all from 
+          different neurons) from the previous layer. All these edges/connections have a specific value
+          called the weight. This weight is multiplied with the activation value of its starting point neuron
+          and then all these are summed up to create the weighted sum which becomes that ONE singular neuron&apos;s
+          activation.
+        </p>
+        <p className = "mt-4">
+          FIRST thing that came to mind was what determines the values of the weights. However, the answer
+          is pretty straightforward. A network starts with completely RANDOM weights, which naturally leads
+          to horrible performance. However, during training, the network becomes better using a function
+          that measures how wrong its answers are.
+        </p>
+        <p className="mt-4">
+          How does the activation stay between 0 and 1? This is thanks to the Sigmoid function, which makes
+          very negative inputs close to 0 and very positive inputs close to 1. 
 
+        </p>
+        <figure className="my-6">
+          <div className="w-full rounded-2xl overflow-hidden border border-neutral-300 bg-white">
+            <div className="relative w-full aspect-[16/10]">
+              <Image
+                src="/nn-sigmoid.svg"
+                alt="Sigmoid activation function"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
+          <figcaption className="text-sm text-center text-gray-600 mt-2">
+            Sigmoid activation curve used to squash values into a bounded range.
+          </figcaption>
+        </figure>
         <br />
         <h2 className="text-xl md:text-2xl font-semibold text-neutral-800 mb-1">
           New section 2
