@@ -396,12 +396,12 @@ export default function Home() {
           neuron&apos;s pre-activation signal.
         </p>
         <p className="mt-4">
-          So where do weights come from? We start with random values. At first
-          the network performs poorly, then training updates the weights to
-          reduce prediction error.
+          So where do weights come from? Are they predefined? 
+          We start with random values. At firs the network performs poorly, 
+          then training updates the weights to reduce prediction error.
         </p>
         <p className="mt-4">
-          To keep activations bounded in this toy example, we use a sigmoid
+          Furthermore, to keep activations bounded in this toy example, we use a sigmoid
           function. Large negative inputs map near 0, and large positive inputs
           map near 1.
         </p>
@@ -420,6 +420,25 @@ export default function Home() {
             Sigmoid activation curve used to squash values into a bounded range.
           </figcaption>
         </figure>
+        <p className="mt-4">
+          What is bias? Bias is a skew in how a model interprets input and produces
+          outputs. It does not come from the architecture itself, but from the
+          data and training process. In pratice, bias shows up when certain patterns
+          are overrepresented and others are missing. One example we can use to think
+          about this is the number 7. Both the numbers 1 and 7 share a vertical line, 
+          so if a model has seen far more examples of the number 1, it may associate 
+          that vertical feature too strongly with 1 and misclassify a 7, especially 
+          if the distinguishing features are less common. This happens because the 
+          model learns to rely on patterns that appear most frequently, not necessarily 
+          the ones that are most informative.
+        </p>
+        <p className="mt-4">
+        Zooming back out a bit, in our example, recall that our input layer had 576 neurons 
+        (24 x 24). Let us focus on an arbitrary neuron, call it neuron_x, in the second layer. 
+        The activation value for neuron_x is computed by taking the weighted sum of all 576 
+        input neurons, adding a single bias term for neuron_x, and then applying the sigmoid 
+        function to that result.
+        </p>
         <br />
         <h2 className="text-xl md:text-2xl font-semibold text-neutral-800 mb-1">
           New section 2
