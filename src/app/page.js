@@ -511,18 +511,6 @@ export default function Home() {
             </li>
             <li>
               <a
-                href="https://openai.com/index/parameter-golf/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="no-underline text-purple-700 hover:text-purple-900"
-              >
-                OpenAI&apos;s Parameter Gulf
-              </a>
-              {" "}
-              — research competition challenging participants to train the most efficient, high-performance language model possible under extreme constraints.
-            </li>
-            <li>
-              <a
                 href="https://research.nvidia.com/labs/dir/cosmos-reason1/"
                 target="_blank"
                 rel="noopener noreferrer"
