@@ -647,30 +647,6 @@ export default function Home() {
               — practical walkthrough of gradient descent and backpropagation
               with data-science-focused intuition.
             </li>
-            <li>
-              <a
-                href="https://example.com/reference-1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="no-underline text-purple-700 hover:text-purple-900"
-              >
-                Reference Title One
-              </a>
-              {" "}
-              — short note describing why this reference is useful.
-            </li>
-            <li>
-              <a
-                href="https://example.com/reference-2"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="no-underline text-purple-700 hover:text-purple-900"
-              >
-                Reference Title Two
-              </a>
-              {" "}
-              — short note about what this source helped clarify.
-            </li>
           </ul>
         </section>
 
