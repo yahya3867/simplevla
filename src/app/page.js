@@ -543,9 +543,18 @@ export default function Home() {
           a learning rate). Over many updates, weights and biases shift so
           predictions become less random and more aligned with targets. That
           iterative minimization process is what we call learning.
+          <sup className="ml-1 text-[12px]">
+            <a
+              href="#fn2"
+              id="fn2-ref"
+              className="no-underline text-purple-700 hover:text-purple-900"
+            >
+              [2]
+            </a>
+          </sup>
         </p>
         <p className="mt-4">
-          Quick concept: a large enough network can memorize both structured and
+          Quick concept: a large enough NN can memorize both structured and
           random labels, but optimization is usually easier on structured data,
           so the loss curve tends to drop faster.
         </p>
@@ -590,6 +599,17 @@ export default function Home() {
           {" "}
           <a
             href="#fn1-ref"
+            className="no-underline text-purple-700 hover:text-purple-900"
+          >
+            ↩ back
+          </a>
+        </p>
+        <p id="fn2" className="text-xs md:text-sm text-neutral-700 mt-2">
+          [2] Gradient descent is one optimizer among many; commonly used
+          alternatives include SGD with momentum, RMSProp, and Adam.
+          {" "}
+          <a
+            href="#fn2-ref"
             className="no-underline text-purple-700 hover:text-purple-900"
           >
             ↩ back
