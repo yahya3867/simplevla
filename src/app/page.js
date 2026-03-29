@@ -551,7 +551,7 @@ export default function Home() {
         </p>
         <br />
         <h2 className="text-xl md:text-2xl font-semibold text-neutral-800 mb-1">
-          New section 2
+          Backpropagation
         </h2>
         <br />
         <p>
