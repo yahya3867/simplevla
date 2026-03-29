@@ -346,8 +346,18 @@ export default function Home() {
         </figure>
         <p className="mt-4">
           What is a neuron in this context? It is a single scalar value, usually
-          called an activation. For digit classification, an MLP might have 3-4
-          layers: an input layer, one or two hidden layers, and an output layer
+          called an activation. For digit classification
+          <sup className="text-[12px]">
+            <a
+              href="#fn1"
+              id="fn1-ref"
+              className="no-underline text-purple-700 hover:text-purple-900"
+            >
+              [1]
+            </a>
+          </sup>
+          , an MLP might have 3-4 layers: an input layer, one or two hidden
+          layers, and an output layer
           of 10 neurons. In the input layer, each pixel maps to one activation
           (black near 0, white near 1). The output neuron with the highest
           activation is the predicted digit.
@@ -474,6 +484,73 @@ export default function Home() {
         </figure>
         <br />
         <h2 className="text-xl md:text-2xl font-semibold text-neutral-800 mb-1">
+          Gradient Descent
+        </h2>
+        <br />
+        <p>
+          So far, we have defined how a neuron computes an activation from
+          weights and biases. The next question is: how do we update those
+          parameters so the network improves?
+        </p>
+        <p className="mt-4">
+          We do this with a cost (loss) function. The loss measures how far the
+          network&apos;s predictions are from the correct answers. High loss means
+          poor performance; low loss means better performance.
+        </p>
+        <p className="mt-4">
+          In practice, the exact loss depends on the task. Common choices
+          include:
+        </p>
+        <ul className="list-disc list-inside text-left mt-4 break-words">
+          <li>Mean Squared Error (MSE)</li>
+          <li>Categorical Cross-Entropy</li>
+          <li>Binary Cross-Entropy</li>
+          <li>Logarithmic Loss (Log Loss)</li>
+        </ul>
+        <p className="mt-4">
+          For intuition, imagine minimizing a simple 1D function. If the slope
+          is positive, you step left. If the slope is negative, you step right.
+          In many dimensions, that slope generalizes to the gradient: a vector
+          that points in the direction of steepest increase.
+        </p>
+        <figure className="my-6">
+          <div className="w-full rounded-2xl overflow-hidden border border-neutral-300 bg-white">
+            <div className="relative w-full aspect-[617/356]">
+              <Image
+                src="/gradient_descent.svg"
+                alt="Gradient descent surface with local and global minima"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
+          <figcaption className="text-sm text-center text-gray-600 mt-2">
+            Gradient descent intuition: follow the negative gradient toward a
+            lower loss.
+          </figcaption>
+        </figure>
+        <p className="mt-4">
+          <b>Local minimum:</b> the lowest point within a nearby region of the
+          loss surface.
+        </p>
+        <p className="mt-2">
+          <b>Global minimum:</b> the absolute lowest point across the full loss
+          surface.
+        </p>
+        <p className="mt-4">
+          Gradient descent repeats one update: compute the gradient, then move
+          parameters a small step in the negative-gradient direction (scaled by
+          a learning rate). Over many updates, weights and biases shift so
+          predictions become less random and more aligned with targets. That
+          iterative minimization process is what we call learning.
+        </p>
+        <p className="mt-4">
+          Quick concept: a large enough network can memorize both structured and
+          random labels, but optimization is usually easier on structured data,
+          so the loss curve tends to drop faster.
+        </p>
+        <br />
+        <h2 className="text-xl md:text-2xl font-semibold text-neutral-800 mb-1">
           New section 2
         </h2>
         <br />
@@ -501,8 +578,15 @@ export default function Home() {
           Footnotes
         </h2>
         <p id="fn1" className="text-xs md:text-sm text-neutral-700 mt-2">
-          [1] Footnote template: use a marker in the main text, then define the
-          full note here for context and sourcing.
+          [1] MNIST dataset (labeled handwritten digit images) from Kaggle:{" "}
+          <a
+            href="https://www.kaggle.com/datasets/hojjatk/mnist-dataset"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="no-underline text-purple-700 hover:text-purple-900"
+          >
+            https://www.kaggle.com/datasets/hojjatk/mnist-dataset
+          </a>
           {" "}
           <a
             href="#fn1-ref"
@@ -529,6 +613,19 @@ export default function Home() {
               </a>
               {" "}
               — Sapkota et al., 2025 (arXiv:2505.04769).
+            </li>
+            <li>
+              <a
+                href="https://developer.nvidia.com/blog/a-data-scientists-guide-to-gradient-descent-and-backpropagation-algorithms/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="no-underline text-purple-700 hover:text-purple-900"
+              >
+                NVIDIA Guide: Gradient Descent and Backpropagation
+              </a>
+              {" "}
+              — practical walkthrough of gradient descent and backpropagation
+              with data-science-focused intuition.
             </li>
             <li>
               <a
@@ -585,6 +682,21 @@ export default function Home() {
               </a>
               {" "}
               — algorithm that compresses AI models (especially LLM KV caches and vector databases) without losing accuracy, while also making them faster and cheaper to run.
+            </li>
+            <li>
+              <a
+                href="https://github.com/karpathy/nanochat"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="no-underline text-purple-700 hover:text-purple-900"
+              >
+                nanochat
+              </a>
+              {" "}
+              — minimal, hackable single-node LLM training harness that covers
+              tokenization, pretraining, finetuning, evaluation, inference, and
+              a chat UI; includes a depth dial for training compute-optimal
+              model sizes.
             </li>
             <li>
               <a
