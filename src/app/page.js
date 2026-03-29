@@ -433,12 +433,45 @@ export default function Home() {
           the ones that are most informative.
         </p>
         <p className="mt-4">
-        Zooming back out a bit, in our example, recall that our input layer had 576 neurons 
-        (24 x 24). Let us focus on an arbitrary neuron, call it neuron_x, in the second layer. 
-        The activation value for neuron_x is computed by taking the weighted sum of all 576 
-        input neurons, adding a single bias term for neuron_x, and then applying the sigmoid 
-        function to that result.
+          Zooming back out a bit, in our example, recall that our input layer had 576 neurons 
+          (24 x 24). Let us focus on an arbitrary neuron, call it neuron_x, in the second layer. 
+          The activation value for neuron_x is computed by taking the weighted sum of all 576 
+          input neurons, adding a single bias term for neuron_x, and then applying the sigmoid 
+          function to that result. Like we mentioned, all these weights and biases are initalized
+          randomly, and the process of finding the the right weights and biases is called Learning.
         </p>
+        <p className="mt-4">
+          After all this, we think it is pretty clear that a neuron is no longer just a thing that holds a
+          a number called the activation, but rather a function. Furthermore, one question naturally comes up: 
+          why do we even use sigmoid here? As we briefly mentioned, sigmoid squashes values between 0 and 1, 
+          which helps keep activations bounded. However, this squashing also comes with a downside. When the 
+          input becomes very large or very small, the output of the sigmoid function changes very little. 
+          This means the neuron becomes less sensitive to changes in its input, making learning slower.
+          An alternative that is often used in practice is the ReLU (Rectified Linear Unit) function. 
+          Instead of squashing values, ReLU simply outputs 0 for negative inputs and keeps positive
+          inputs unchanged. This allows strong signals to pass through without being compressed, 
+          which makes it easier for the network to learn meaningful patterns. So while sigmoid 
+          helps us understand the idea of activations in a clean, bounded way, ReLU is often 
+          preferred in real systems because it preserves more information and leads to faster, 
+          more stable learning. 
+          
+        </p>
+        <figure className="my-6">
+          <div className="w-full rounded-2xl overflow-hidden border border-neutral-300 bg-white">
+            <div className="relative w-full aspect-[16/10]">
+              <Image
+                src="/ReLU.svg"
+                alt="ReLU activation function"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
+          <figcaption className="text-sm text-center text-gray-600 mt-2">
+            ReLU activation curve: values below 0 clamp to 0, values above 0
+            pass through linearly.
+          </figcaption>
+        </figure>
         <br />
         <h2 className="text-xl md:text-2xl font-semibold text-neutral-800 mb-1">
           New section 2
