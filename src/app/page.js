@@ -564,10 +564,31 @@ export default function Home() {
         </h2>
         <br />
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-          iaculis lorem sed sapien tristique, nec luctus lectus commodo. Etiam
-          non massa nec nisi dictum feugiat. Aliquam erat volutpat. Maecenas
-          tincidunt mi eget est faucibus, ut luctus lorem iaculis.
+          So far, we have covered forward pass and loss. The next question is:
+          how do we know which specific weights and biases to change, and by how
+          much?
+        </p>
+        <p className="mt-4">
+          Backpropagation answers that question. After computing the loss, we
+          propagate error signals backward through the network and compute
+          gradients for each parameter. These gradients tell us how sensitive
+          the loss is to small changes in each weight and bias.
+        </p>
+        <p className="mt-4">
+          Mathematically, this is an efficient application of the chain rule
+          across layers. Instead of recomputing everything from scratch for each
+          parameter, backprop reuses intermediate terms while moving from output
+          layers back to earlier layers.
+        </p>
+        <ul className="list-disc list-inside text-left mt-4 break-words">
+          <li>Run a forward pass to get predictions.</li>
+          <li>Compute loss against targets.</li>
+          <li>Backpropagate to compute parameter gradients.</li>
+          <li>Use an optimizer (for example, gradient descent) to update parameters.</li>
+        </ul>
+        <p className="mt-4">
+          Quick distinction: backpropagation computes gradients; the optimizer
+          applies updates. Together, they drive learning.
         </p>
 
         <br />
