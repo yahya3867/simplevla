@@ -560,6 +560,51 @@ export default function Home() {
         </p>
         <br />
         <h2 className="text-xl md:text-2xl font-semibold text-neutral-800 mb-1">
+          Stochastic Gradient Descent
+        </h2>
+        <br />
+        <p>
+          So far, we described gradient descent as updating parameters using the
+          cost over the full training set. In practice, that full computation is
+          often too expensive because it requires evaluating very large numbers
+          of examples at once.
+        </p>
+        <p className="mt-4">
+          Stochastic gradient descent (SGD) solves this by using a small subset
+          of data at each step, usually called a mini-batch. Instead of
+          computing the exact full-dataset gradient, SGD uses a local estimate
+          from that batch and updates immediately.
+        </p>
+        <p className="mt-4">
+          These updates are noisier because each mini-batch only sees part of
+          the data. So the optimization path is not perfectly smooth; it jitters
+          while still trending downhill.
+        </p>
+        <figure className="my-6">
+          <div className="w-full rounded-2xl overflow-hidden border border-neutral-300 bg-white">
+            <div className="relative w-full aspect-[940/327]">
+              <Image
+                src="/gd_sgd.svg"
+                alt="Comparison of gradient descent and stochastic gradient descent trajectories"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
+          <figcaption className="text-sm text-center text-gray-600 mt-2">
+            Gradient descent vs SGD: SGD takes noisier mini-batch steps but
+            still trends toward lower loss.
+          </figcaption>
+        </figure>
+        <p className="mt-4">
+          That noise is often helpful, not harmful. It can speed up training and
+          help the model avoid getting stuck in certain regions of the loss
+          landscape. Over many iterations, SGD still drives the network toward a
+          minimum while being much more computationally efficient than full
+          batch updates.
+        </p>
+        <br />
+        <h2 className="text-xl md:text-2xl font-semibold text-neutral-800 mb-1">
           Backpropagation
         </h2>
         <br />
